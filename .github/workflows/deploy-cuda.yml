@@ -22,9 +22,9 @@ jobs:
         with:
           repository: comfyanonymous/ComfyUI
 
-      # # 进入指定目录
-      # - name: Move to the target directory
-      #   run: cd apps/playwright-service-ts
+      # 进入指定目录
+      - name: Move to the target directory
+        run: cd ..
 
       # 登录到 GitHub Container Registry (ghcr.io)
       - name: Login to GitHub Container Registry
