@@ -1,4 +1,4 @@
-name: Deploy Playwright
+name: Deploy CUDA
 
 env:
   image_name: fyl080801/comfyui-cuda
@@ -19,12 +19,10 @@ jobs:
       # 从 GitHub 拉取代码
       - name: Checkout the repository
         uses: actions/checkout@v3
-        with:
-          repository: comfyanonymous/ComfyUI
-          path: ComfyUI
-      # 进入指定目录
-      - name: Move to the target directory
-        run: cd ..
+      
+      - name: Clone ComfyUI repository
+        run: |
+          git clone https://github.com/comfyanonymous/ComfyUI.git ComfyUI
 
       # 登录到 GitHub Container Registry (ghcr.io)
       - name: Login to GitHub Container Registry
